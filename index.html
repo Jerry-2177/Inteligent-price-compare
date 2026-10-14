@@ -9,31 +9,27 @@
   :root{
     --blue-900:#1e40af; --blue-500:#3b82f6; --blue-50:#eff6ff;
     --ink:#0f172a; --ink-2:#475569; --ink-3:#94a3b8;
-    --line:#e2e8f0; --amber:#fcd34d; --bg:#f8fafc;
+    --line:#e2e8f0; --bg:#f8fafc;
+    --green:#047857; --green-bg:#ecfdf5; --green-line:#a7f3d0;
+    --amber-ink:#92400e; --amber-bg:#fffbeb; --amber-line:#fde68a;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font:16px/1.65 system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
-  }
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.65 system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
   .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 
-  /* ---------- 顶部 ---------- */
-  .hero{
-    background:linear-gradient(160deg,var(--blue-900),var(--blue-500));
-    color:#fff; padding:52px 0 44px;
-  }
-  .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px;letter-spacing:.2px}
+  .hero{background:linear-gradient(160deg,var(--blue-900),var(--blue-500));color:#fff;padding:52px 0 44px}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px}
   .brand img{width:52px;height:52px;border-radius:13px;display:block}
   .hero h1{font-size:clamp(24px,4.6vw,36px);line-height:1.3;margin:26px 0 12px;font-weight:800}
   .hero p.sub{margin:0;font-size:clamp(15px,2.3vw,17px);color:#dbeafe}
-  .tag{
-    display:inline-block;margin-top:20px;padding:5px 12px;border-radius:999px;
-    background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);font-size:13px;
-  }
+  .tag{display:inline-block;margin-top:20px;padding:5px 12px;border-radius:999px;
+    background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);font-size:13px}
+  .topnav{margin-top:16px;font-size:14px}
+  .topnav a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.45);margin-right:16px}
+  .topnav a:hover{border-bottom-color:#fff}
 
-  /* ---------- 三步 ---------- */
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:-28px 0 0;position:relative;z-index:2}
   .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 6px 20px rgba(15,23,42,.06)}
   .card .n{width:28px;height:28px;border-radius:9px;background:var(--blue-50);color:var(--blue-900);
@@ -41,30 +37,26 @@
   .card h3{margin:0 0 6px;font-size:16px}
   .card p{margin:0;color:var(--ink-2);font-size:14px}
 
-  /* ---------- 区块 ---------- */
   section{margin:44px 0}
   h2{font-size:20px;margin:0 0 6px}
   .lead{color:var(--ink-2);margin:0 0 18px;font-size:15px}
 
-  /* ---------- 演示 ---------- */
   .demo{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
-  .demo-head{padding:16px 18px;border-bottom:1px solid var(--line);background:#fff}
-  .badge{
-    display:inline-block;padding:3px 9px;border-radius:6px;font-size:12px;font-weight:600;
-    background:#fef3c7;color:#92400e;border:1px solid #fde68a;
-  }
+  .demo-head{padding:16px 18px;border-bottom:1px solid var(--line)}
+  .badge{display:inline-block;padding:3px 9px;border-radius:6px;font-size:12px;font-weight:600;
+    background:#f1f5f9;color:var(--ink-2);border:1px solid var(--line)}
+  .badge.live{background:var(--green-bg);color:var(--green);border-color:var(--green-line)}
+  .badge.demo{background:var(--amber-bg);color:var(--amber-ink);border-color:var(--amber-line)}
   .search{display:flex;gap:10px;margin-top:12px}
-  .search input{
-    flex:1;min-width:0;padding:11px 14px;border:1px solid var(--line);border-radius:10px;
-    font-size:15px;font-family:inherit;color:var(--ink);background:#fff;
-  }
+  .search input{flex:1;min-width:0;padding:11px 14px;border:1px solid var(--line);border-radius:10px;
+    font-size:15px;font-family:inherit;color:var(--ink);background:#fff}
   .search input:focus{outline:2px solid var(--blue-500);outline-offset:1px;border-color:var(--blue-500)}
-  .search button{
-    padding:11px 18px;border:0;border-radius:10px;background:var(--blue-900);color:#fff;
-    font-size:15px;font-weight:600;font-family:inherit;cursor:pointer;
-  }
+  .search button{padding:11px 18px;border:0;border-radius:10px;background:var(--blue-900);color:#fff;
+    font-size:15px;font-weight:600;font-family:inherit;cursor:pointer}
   .search button:hover{background:#1b3a9c}
+  .search button:disabled{background:var(--ink-3);cursor:progress}
   .hint{color:var(--ink-3);font-size:13px;margin:10px 0 0}
+  .hint.err{color:#b91c1c}
 
   .table-scroll{overflow-x:auto}
   table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
@@ -78,7 +70,13 @@
   tbody tr:hover{background:#fcfdff}
   .empty{padding:22px 18px;color:var(--ink-3);display:none;font-size:14px}
 
-  /* ---------- 合规 ---------- */
+  .stats{padding:14px 18px;border-top:1px solid var(--line);background:#fcfdff;
+    font-size:13px;color:var(--ink-2);display:none}
+  .stats .cov{display:flex;align-items:center;gap:8px;margin-top:6px;
+    font-family:ui-monospace,Consolas,monospace}
+  .stats .platline{margin:2px 0}
+  .stats b{color:var(--ink)}
+
   .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--blue-500);
     border-radius:10px;padding:16px 18px;font-size:14px;color:var(--ink-2)}
   .note strong{color:var(--ink)}
@@ -89,10 +87,7 @@
   footer p{margin:6px 0;font-size:13px;color:var(--ink-2)}
   footer a{color:var(--blue-900)}
 
-  @media (max-width:720px){
-    .steps{grid-template-columns:1fr;margin-top:-20px}
-    .hero{padding:40px 0 34px}
-  }
+  @media (max-width:720px){.steps{grid-template-columns:1fr;margin-top:-20px}.hero{padding:40px 0 34px}}
 </style>
 </head>
 <body>
@@ -106,51 +101,41 @@
     <h1>同款商品，按「券后价」找最划算的那个</h1>
     <p class="sub">输入关键词 → 查看券前价、优惠券面额、券后价与销量 → 点击跳转购买</p>
     <span class="tag">开发中 · 当前已接入拼多多，淘宝接入中</span>
+    <nav class="topnav">
+      <a href="index.html">比价首页</a>
+      <a href="results.html">数据快照</a>
+      <a href="privacy.html">隐私政策与数据来源</a>
+    </nav>
   </div>
 </header>
 
 <main class="wrap">
 
   <div class="steps">
-    <div class="card">
-      <div class="n">1</div>
-      <h3>搜索关键词</h3>
-      <p>输入想买的商品，例如「蓝牙耳机」。</p>
-    </div>
-    <div class="card">
-      <div class="n">2</div>
-      <h3>看券后价排序</h3>
-      <p>列表按「券前价 − 优惠券面额 = 券后价」从低到高排列。</p>
-    </div>
-    <div class="card">
-      <div class="n">3</div>
-      <h3>点击跳转购买</h3>
-      <p>选中商品后跳转到商品页，价格以商品页为准。</p>
-    </div>
+    <div class="card"><div class="n">1</div><h3>搜索关键词</h3><p>输入想买的商品，例如「蓝牙耳机」。</p></div>
+    <div class="card"><div class="n">2</div><h3>看券后价排序</h3><p>列表按「券前价 − 优惠券面额 = 券后价」从低到高排列。</p></div>
+    <div class="card"><div class="n">3</div><h3>点击跳转购买</h3><p>选中商品后跳转到商品页，价格以商品页为准。</p></div>
   </div>
 
   <section>
-    <h2>功能演示</h2>
-    <p class="lead">下面是产品形态的演示界面，可在搜索框输入文字筛选、观察券后价排序效果。</p>
+    <h2>比价</h2>
+    <p class="lead">输入商品关键词，按券后价排序查看。</p>
 
     <div class="demo">
       <div class="demo-head">
-        <span class="badge">示例数据 · 非实时结果</span>
+        <span class="badge" id="mode-badge">正在检测本机服务…</span>
         <div class="search">
           <input id="kw" type="search" value="蓝牙耳机" autocomplete="off"
                  aria-label="搜索商品关键词" placeholder="输入商品关键词，如：蓝牙耳机">
           <button type="button" id="go">比价</button>
         </div>
-        <p class="hint">演示数据仅用于展示产品形态，不是真实报价，也不代表任何商品的实时价格。</p>
+        <p class="hint" id="mode-note"></p>
       </div>
 
       <div class="table-scroll">
         <table>
           <thead>
-            <tr>
-              <th>#</th><th>平台</th><th>商品</th>
-              <th>券前价</th><th>券面额</th><th>券后价</th><th>销量</th>
-            </tr>
+            <tr><th>#</th><th>平台</th><th>商品</th><th>券前价</th><th>券面额</th><th>券后价</th><th>销量</th></tr>
           </thead>
           <tbody id="rows">
             <tr data-title="无线蓝牙耳机 运动款 入耳式" data-final="79.90">
@@ -186,7 +171,8 @@
           </tbody>
         </table>
       </div>
-      <p class="empty" id="empty">没有匹配的示例商品，换个关键词试试。</p>
+      <p class="empty" id="empty">没有匹配的商品，换个关键词试试。</p>
+      <div class="stats" id="stats"></div>
     </div>
   </section>
 
@@ -212,42 +198,175 @@
     <p><strong>智能比价助手</strong> —— 由个人开发者独立开发的商品比价工具。</p>
     <p>本页面与拼多多、淘宝等平台<b>无隶属关系</b>，非任何平台的官方产品或官方页面。</p>
     <p>商品名称、价格等信息来源于各平台联盟开放接口，一切以商品详情页为准。</p>
-    <p><a href="privacy.html">隐私政策与数据来源声明</a> · 联系方式：jerrycj57767@163.com</p>
-    <p style="color:#94a3b8">页面更新：2026-10-10</p>
+    <p><a href="results.html">比价数据快照</a> · <a href="privacy.html">隐私政策与数据来源声明</a> · 联系方式：jerrycj57767@163.com</p>
+    <p style="color:#94a3b8">页面更新：2026-10-14</p>
   </div>
 </footer>
 
 <script>
-  // 演示交互：按关键词筛选 + 按券后价升序排列。纯前端，不发任何请求。
+  // ======================================================================
+  // 双模式：
+  //   live —— 页面由本机 api_server.py 提供，或本机服务正在运行 → 真实数据
+  //   demo —— GitHub Pages 上的静态托管（跑不了 Python）→ 演示数据
+  // 本地服务地址：同源时用空串，否则指向 127.0.0.1:8000
+  // ======================================================================
+  var LOCAL = location.hostname === '127.0.0.1' || location.hostname === 'localhost';
+  var API = LOCAL ? '' : 'http://127.0.0.1:8000';
+  var MODE = 'demo';
+
   var input = document.getElementById('kw');
   var tbody = document.getElementById('rows');
   var empty = document.getElementById('empty');
+  var stats = document.getElementById('stats');
+  var badge = document.getElementById('mode-badge');
+  var note = document.getElementById('mode-note');
+  var go = document.getElementById('go');
 
-  function render() {
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c];
+    });
+  }
+  function sales(n) {
+    n = Number(n) || 0;
+    if (n <= 0) return '—';
+    return n >= 10000 ? (n / 10000).toFixed(1) + '万' : String(n);
+  }
+  function yuan(v) { return '¥' + (Number(v) || 0).toFixed(2); }
+
+  function setMode(mode, text, cls) {
+    MODE = mode;
+    badge.textContent = text;
+    badge.className = 'badge ' + cls;
+  }
+
+  // ---------- 检测本机服务 ----------
+  function detect() {
+    var ctl = new AbortController();
+    var timer = setTimeout(function () { ctl.abort(); }, 1500);
+    return fetch(API + '/api/status', {signal: ctl.signal})
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (s) {
+        clearTimeout(timer);
+        if (!s.ok) throw new Error(s.error || '服务未就绪');
+        setMode('live', '实时数据 · 本机服务已连接', 'live');
+        note.className = 'hint';
+        note.textContent = '已连接本机服务（平台：' + ((s.platforms || []).join('、') || '无') +
+          '，PID：' + (s.pdd_pid || '未配置') + '）。下面显示真实数据。';
+        return true;
+      })
+      .catch(function () {
+        clearTimeout(timer);
+        setMode('demo', '演示数据 · 静态页面', 'demo');
+        note.className = 'hint';
+        note.textContent = '当前是内置演示数据（静态页面，任何电脑打开都能看）。' +
+          '真实历史数据见「数据快照」页；实时比价需在本机运行 ' +
+          'python cps-mcp/api_server.py，再访问 http://127.0.0.1:8000';
+        return false;
+      });
+  }
+
+  // ---------- 演示模式 ----------
+  function renderDemo() {
     var kw = (input.value || '').trim().toLowerCase();
     var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
-
-    rows.sort(function (a, b) {
-      return parseFloat(a.dataset.final) - parseFloat(b.dataset.final);
-    });
-
+    rows.sort(function (a, b) { return parseFloat(a.dataset.final) - parseFloat(b.dataset.final); });
     var shown = 0;
     rows.forEach(function (tr) {
       var hit = !kw || tr.dataset.title.toLowerCase().indexOf(kw) !== -1;
       tr.style.display = hit ? '' : 'none';
-      if (hit) {
-        shown += 1;
-        tr.cells[0].textContent = shown;
-      }
+      if (hit) { shown += 1; tr.cells[0].textContent = shown; }
       tbody.appendChild(tr);
     });
-
     empty.style.display = shown ? 'none' : 'block';
+    stats.style.display = 'none';
   }
 
-  input.addEventListener('input', render);
-  document.getElementById('go').addEventListener('click', render);
-  render();
+  // ---------- 实时模式 ----------
+  function renderLive(payload) {
+    var result = payload.result || {};
+    var items = result.items || [];
+    tbody.innerHTML = '';
+
+    items.slice(0, 30).forEach(function (it, i) {
+      var tr = document.createElement('tr');
+      tr.innerHTML =
+        '<td class="num">' + (i + 1) + '</td>' +
+        '<td><span class="plat">' + esc(it.platform) + '</span></td>' +
+        '<td class="title">' + esc(it.title) + '</td>' +
+        '<td class="num">' + yuan(it.price) + '</td>' +
+        '<td class="num">' + yuan(it.coupon_amount) + '</td>' +
+        '<td class="num final">' + yuan(it.final_price) + '</td>' +
+        '<td class="num">' + sales(it.sales) + '</td>';
+      tbody.appendChild(tr);
+    });
+    empty.style.display = items.length ? 'none' : 'block';
+
+    var st = result.stats || {};
+    var lines = [];
+    Object.keys(result.platforms || {}).forEach(function (name) {
+      var p = result.platforms[name];
+      lines.push('<div class="platline">' + (p.ok ? '✓' : '✗') + ' <b>' + esc(name) + '</b> ' +
+        (p.ok ? '返回 ' + p.count + ' 条' : esc(p.error || '失败')) + '</div>');
+    });
+    if (st.cheapest_overall) {
+      var c = st.cheapest_overall;
+      lines.push('<div class="platline">🏆 全局最低券后价 <b>' + yuan(c.final_price) +
+        '</b>　券前 ' + yuan(c.price) + ' − 券 ' + yuan(c.coupon_amount) + '</div>');
+    }
+    var cov = st.field_coverage || {};
+    Object.keys(cov).forEach(function (f) {
+      var c2 = cov[f], n = Math.round(c2.rate * 10);
+      var bar = new Array(n + 1).join('█') + new Array(10 - n + 1).join('·');
+      lines.push('<div class="cov">' + esc(f) + ' <span>' + bar + '</span> ' +
+        c2.filled + '/' + c2.total + '</div>');
+    });
+    lines.push('<div class="platline" style="margin-top:8px;color:#94a3b8">数据更新时间：' +
+      esc(result.generated_at || '') + '　耗时 ' + (payload.elapsed_ms || 0) + ' ms　' +
+      '（rating 恒为 0 属数据源限制：联盟接口不返回评价）</div>');
+    stats.innerHTML = lines.join('');
+    stats.style.display = 'block';
+  }
+
+  // ---------- 主流程 ----------
+  function run() {
+    var kw = (input.value || '').trim();
+    if (!kw) { input.focus(); return; }
+    if (MODE !== 'live') { renderDemo(); return; }
+
+    go.disabled = true;
+    go.textContent = '查询中…';
+    note.className = 'hint';
+    note.textContent = '正在调用多多进宝接口…';
+
+    fetch(API + '/api/compare?keyword=' + encodeURIComponent(kw))
+      .then(function (r) { return r.json().then(function (j) { return {status: r.status, body: j}; }); })
+      .then(function (res) {
+        var body = res.body || {};
+        if (!body.ok) throw new Error(body.error || ('HTTP ' + res.status));
+        renderLive(body);
+        note.className = 'hint';
+        note.textContent = '共 ' + ((body.result.items || []).length) + ' 条结果（真实数据）';
+      })
+      .catch(function (err) {
+        note.className = 'hint err';
+        note.textContent = '查询失败：' + err.message;
+      })
+      .finally(function () {
+        go.disabled = false;
+        go.textContent = '比价';
+      });
+  }
+
+  input.addEventListener('input', function () { if (MODE !== 'live') renderDemo(); });
+  go.addEventListener('click', run);
+  input.addEventListener('keydown', function (e) { if (e.key === 'Enter') run(); });
+
+  // 先立刻渲染内容（公开页面上零等待，任何电脑都能直接看到），
+  // 再在后台探测本机服务；探测成功才切到实时模式并自动跑一次。
+  renderDemo();
+  detect().then(function (live) { if (live) { run(); } });
 </script>
 </body>
 </html>
+
