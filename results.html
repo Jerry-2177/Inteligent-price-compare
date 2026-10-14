@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>比价数据快照 · 智能比价助手</title>
+<meta name="description" content="智能比价助手的历史比价结果快照：商品券前价、优惠券面额与券后价，按券后价排序。">
+<style>
+:root{--blue-900:#1e40af;--blue-500:#3b82f6;--blue-50:#eff6ff;--ink:#0f172a;--ink-2:#475569;
+--ink-3:#94a3b8;--line:#e2e8f0;--bg:#f8fafc;--green:#047857;--green-bg:#ecfdf5;--green-line:#a7f3d0;
+--amber-ink:#92400e;--amber-bg:#fffbeb;--amber-line:#fde68a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.65 system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{background:linear-gradient(160deg,var(--blue-900),var(--blue-500));color:#fff;padding:34px 0 30px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:17px}
+.brand img{width:44px;height:44px;border-radius:11px;display:block}
+h1{font-size:clamp(22px,3.6vw,30px);margin:18px 0 8px;font-weight:800}
+header p{margin:0;color:#dbeafe;font-size:15px}
+nav{margin-top:16px;font-size:14px}
+nav a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.45);margin-right:16px}
+nav a:hover{border-bottom-color:#fff}
+.notice{margin:22px 0 0;background:var(--amber-bg);border:1px solid var(--amber-line);
+border-radius:12px;padding:14px 16px;font-size:13.5px;color:var(--amber-ink)}
+section{margin:26px 0}
+.snap{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:22px}
+.snap-head{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;
+align-items:baseline;gap:12px;flex-wrap:wrap}
+.snap-head h2{font-size:18px;margin:0}
+.snap-head .meta{color:var(--ink-3);font-size:13px}
+.plat{font-size:12px;padding:2px 8px;border-radius:6px;font-weight:600;background:var(--green-bg);
+color:var(--green);border:1px solid var(--green-line)}
+.plat.bad{background:#fef2f2;color:#b91c1c;border-color:#fecaca}
+.table-scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{background:#f8fafc;color:var(--ink-2);font-weight:600;font-size:13px}
+td.title{white-space:normal;min-width:240px}
+.num{font-variant-numeric:tabular-nums}
+.final{font-weight:800;color:#b91c1c}
+tbody tr:hover{background:#fcfdff}
+.stats{padding:14px 18px;border-top:1px solid var(--line);background:#fcfdff;
+font-size:13px;color:var(--ink-2)}
+.stats .cov{display:flex;align-items:center;gap:8px;margin-top:6px;
+font-family:ui-monospace,Consolas,monospace}
+.stats .line{margin:2px 0}
+.stats b{color:var(--ink)}
+footer{border-top:1px solid var(--line);background:#fff;padding:24px 0 32px;margin-top:40px}
+footer p{margin:6px 0;font-size:13px;color:var(--ink-2)}
+footer a{color:var(--blue-900)}
+.empty{background:#fff;border:1px dashed var(--line);border-radius:14px;padding:26px;
+text-align:center;color:var(--ink-3);font-size:14px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <img src="icon.png" alt="智能比价助手图标">
+      <span>智能比价助手</span>
+    </div>
+    <h1>比价数据快照</h1>
+    <p>这里是从联盟开放接口取回的真实比价结果归档，按「券后价」从低到高排列。</p>
+    <nav>
+      <a href="index.html">比价首页</a>
+      <a href="results.html">数据快照</a>
+      <a href="privacy.html">隐私政策与数据来源</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="notice">
+    <b>这是静态快照，不是实时价格。</b>页面内容在生成时写入，之后不会自动更新；
+    联盟接口数据本身也存在更新延迟。成交价格请以商品详情页为准。
+    需要实时查询请在本机运行 <code>python cps-mcp/api_server.py</code> 后访问
+    <code>http://127.0.0.1:8000</code>。
+  </div>
+  <section>
+<div class="snap">
+  <div class="snap-head">
+    <h2>「保温杯」比价快照</h2>
+    <span class="meta">数据时间：2026-10-14T15:13:59　共 20 条</span>
+    <span class="plat">pdd · 20 条</span>
+  </div>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>#</th><th>平台</th><th>商品</th><th>券前价</th><th>券面额</th><th>券后价</th><th>销量</th></tr></thead>
+      <tbody><tr><td class="num">1</td><td>pdd</td><td class="title">保温杯304不锈钢男女士水杯子男女生大容量便携高档茶杯水杯定制</td><td class="num">¥9.90</td><td class="num">¥1.00</td><td class="num final">¥8.90</td><td class="num">15.0 万</td></tr><tr><td class="num">2</td><td>pdd</td><td class="title">跨境不锈钢保温杯一杯三盖商务办公礼品水杯礼盒套装杯子</td><td class="num">¥12.50</td><td class="num">¥1.00</td><td class="num final">¥11.50</td><td class="num">2609</td></tr><tr><td class="num">3</td><td>pdd</td><td class="title">【川朵拉】ins女生学生水杯不锈钢高颜值卡通吸管杯带茶隔杯子</td><td class="num">¥18.80</td><td class="num">¥7.00</td><td class="num final">¥11.80</td><td class="num">65</td></tr><tr><td class="num">4</td><td>pdd</td><td class="title">商务智能测温不锈钢保温杯男女定制广告创意便携带茶隔刻字印LOGO</td><td class="num">¥12.90</td><td class="num">¥1.00</td><td class="num final">¥11.90</td><td class="num">1.0 万</td></tr><tr><td class="num">5</td><td>pdd</td><td class="title">爆款樱桃杯子双饮食品级不锈钢保温杯男女学生便携式吸管蝴蝶水杯</td><td class="num">¥16.09</td><td class="num">¥1.00</td><td class="num final">¥15.09</td><td class="num">784</td></tr><tr><td class="num">6</td><td>pdd</td><td class="title">【买一到手二件】小茶日记高颜值儿童保温杯食品级卡通母婴水杯</td><td class="num">¥36.90</td><td class="num">¥20.00</td><td class="num final">¥16.90</td><td class="num">11.0 万</td></tr><tr><td class="num">7</td><td>pdd</td><td class="title">群鸿禧创意316男运动户外便携车载保温杯不锈钢【群鸿禧磨砂款】</td><td class="num">¥20.60</td><td class="num">¥2.00</td><td class="num final">¥18.60</td><td class="num">4362</td></tr><tr><td class="num">8</td><td>pdd</td><td class="title">新款高颜值【双饮运动舱】吸管保温杯户外运动健身便携学生成人</td><td class="num">¥29.03</td><td class="num">¥10.00</td><td class="num final">¥19.03</td><td class="num">1000</td></tr><tr><td class="num">9</td><td>pdd</td><td class="title">新款蜡笔小新保温小孩杯子6到12岁卡通保温水杯316不锈钢潮流</td><td class="num">¥21.54</td><td class="num">¥2.00</td><td class="num final">¥19.54</td><td class="num">793</td></tr><tr><td class="num">10</td><td>pdd</td><td class="title">不锈钢刻字保温杯大容量2026新款保冷焖泡茶杯子男士水杯家用</td><td class="num">¥34.90</td><td class="num">¥11.00</td><td class="num final">¥23.90</td><td class="num">2113</td></tr><tr><td class="num">11</td><td>pdd</td><td class="title">316保温保温杯新款便携不锈钢高颜值水杯吸管杯子学生大容量</td><td class="num">¥26.80</td><td class="num">¥2.00</td><td class="num final">¥24.80</td><td class="num">60</td></tr><tr><td class="num">12</td><td>pdd</td><td class="title">高颜值保温杯女生316不锈钢食品级儿童吸管杯子学生便携双饮水杯</td><td class="num">¥28.80</td><td class="num">¥2.00</td><td class="num final">¥26.80</td><td class="num">2988</td></tr><tr><td class="num">13</td><td>pdd</td><td class="title">【富光拾喜】双层玻璃杯大容量便携男士商务水杯防烫家用办公过滤杯子</td><td class="num">¥28.90</td><td class="num">¥1.00</td><td class="num final">¥27.90</td><td class="num">37.0 万</td></tr><tr><td class="num">14</td><td>pdd</td><td class="title">保温杯女316L加厚不锈钢杯家用大容量咖啡杯简约吸管杯真空水杯</td><td class="num">¥42.72</td><td class="num">¥9.00</td><td class="num final">¥33.72</td><td class="num">—</td></tr><tr><td class="num">15</td><td>pdd</td><td class="title">全钢男士不锈钢大容量茶杯保温杯保温水杯便携户外男女茶水水壶</td><td class="num">¥39.90</td><td class="num">¥5.00</td><td class="num final">¥34.90</td><td class="num">731</td></tr><tr><td class="num">16</td><td>pdd</td><td class="title">乔丹运动保温杯大容量316底男女生健身水壶学生上学便携吸管杯子</td><td class="num">¥39.90</td><td class="num">¥4.00</td><td class="num final">¥35.90</td><td class="num">5106</td></tr><tr><td class="num">17</td><td>pdd</td><td class="title">316不锈钢内底保冷暖水壶 保温户外大容量家用保温壶旅行便携车载</td><td class="num">¥42.90</td><td class="num">¥3.00</td><td class="num final">¥39.90</td><td class="num">7174</td></tr><tr><td class="num">18</td><td>pdd</td><td class="title">【Zippo】保温杯450ml大容量便携泡茶杯316不锈钢初高中弹盖保冷杯子</td><td class="num">¥52.00</td><td class="num">¥6.00</td><td class="num final">¥46.00</td><td class="num">12.0 万</td></tr><tr><td class="num">19</td><td>pdd</td><td class="title">乔丹保温杯大容量不锈钢学生上学水杯子户外登山徒步骑行运动水壶</td><td class="num">¥58.90</td><td class="num">¥4.00</td><td class="num final">¥54.90</td><td class="num">3181</td></tr><tr><td class="num">20</td><td>pdd</td><td class="title">唯水26新款不锈钢保温壶长效保冷工地超大容量户外便携车载保温杯</td><td class="num">¥89.00</td><td class="num">¥6.00</td><td class="num final">¥83.00</td><td class="num">834</td></tr></tbody>
+    </table>
+  </div>
+  <div class="stats"><div class="line">🏆 全局最低券后价 <b>¥8.90</b>　券前 ¥9.90 − 券 ¥1.00　（保温杯304不锈钢男女士水杯子男女生大容量便携高档茶杯水杯定制）</div><div class="cov">price <span>██████████</span> 20/20</div><div class="cov">coupon_amount <span>██████████</span> 20/20</div><div class="cov">final_price <span>██████████</span> 20/20</div><div class="cov">sales <span>██████████</span> 19/20</div><div class="cov">rating <span>··········</span> 0/20</div><div class="line" style="color:#94a3b8;margin-top:8px">rating 恒为 0 属数据源限制：联盟开放接口不返回评价数据，不是抓取失败。</div></div>
+</div>
+<div class="snap">
+  <div class="snap-head">
+    <h2>「蓝牙耳机」比价快照</h2>
+    <span class="meta">数据时间：2026-10-14T15:13:58　共 19 条</span>
+    <span class="plat">pdd · 19 条</span>
+  </div>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>#</th><th>平台</th><th>商品</th><th>券前价</th><th>券面额</th><th>券后价</th><th>销量</th></tr></thead>
+      <tbody><tr><td class="num">1</td><td>pdd</td><td class="title">5.2无线蓝牙耳机Pro5五5代迷你华为双耳入耳小米OPPO苹果安卓通用</td><td class="num">¥11.80</td><td class="num">¥1.00</td><td class="num final">¥10.80</td><td class="num">2.0 万</td></tr><tr><td class="num">2</td><td>pdd</td><td class="title">XlMI蓝牙无线耳机降噪高音质迷你隐形入耳式跑步办公学生超长续航</td><td class="num">¥12.45</td><td class="num">¥1.00</td><td class="num final">¥11.45</td><td class="num">13.0 万</td></tr><tr><td class="num">3</td><td>pdd</td><td class="title">XlMI蓝牙耳机无线2026小米适用运动跑步学生男女轻巧舒适高清音质</td><td class="num">¥13.40</td><td class="num">¥1.00</td><td class="num final">¥12.40</td><td class="num">1.0 万</td></tr><tr><td class="num">4</td><td>pdd</td><td class="title">无线耳机蓝牙超强待机听歌通话降噪挂脖插卡华为OPPOvivo苹果通用</td><td class="num">¥15.60</td><td class="num">¥1.00</td><td class="num final">¥14.60</td><td class="num">35.0 万</td></tr><tr><td class="num">5</td><td>pdd</td><td class="title">柏林2026新款无线蓝牙耳机入耳式高音质降噪续航游戏运动听歌男女</td><td class="num">¥18.90</td><td class="num">¥1.00</td><td class="num final">¥17.90</td><td class="num">101.0 万</td></tr><tr><td class="num">6</td><td>pdd</td><td class="title">入耳式安卓2026苹果华强北无线蓝牙耳机运动超长续航降噪适用</td><td class="num">¥19.90</td><td class="num">¥1.00</td><td class="num final">¥18.90</td><td class="num">—</td></tr><tr><td class="num">7</td><td>pdd</td><td class="title">蓝牙耳机2026新款智能无线降噪高音质入耳式显示电量耳机跨境耳机</td><td class="num">¥19.99</td><td class="num">¥1.00</td><td class="num final">¥18.99</td><td class="num">1</td></tr><tr><td class="num">8</td><td>pdd</td><td class="title">星穹铁道知更鸟无线蓝牙耳机入耳式适配华为小米OPPOvivo苹果安卓</td><td class="num">¥44.04</td><td class="num">¥20.00</td><td class="num final">¥24.04</td><td class="num">5567</td></tr><tr><td class="num">9</td><td>pdd</td><td class="title">【小巧体积】新款无线蓝牙耳机入耳式续航数显高清通话智能降噪</td><td class="num">¥29.16</td><td class="num">¥4.00</td><td class="num final">¥25.16</td><td class="num">4</td></tr><tr><td class="num">10</td><td>pdd</td><td class="title">【柯莱逊】新款T15A蓝牙耳机夹耳式APP降噪超高音质长续航运动防水</td><td class="num">¥34.80</td><td class="num">¥5.00</td><td class="num final">¥29.80</td><td class="num">268</td></tr><tr><td class="num">11</td><td>pdd</td><td class="title">电竞新款入耳式游戏耳机无感延迟蓝牙高音质续航苹果安卓通用超长</td><td class="num">¥41.20</td><td class="num">¥11.00</td><td class="num final">¥30.20</td><td class="num">2</td></tr><tr><td class="num">12</td><td>pdd</td><td class="title">蓝牙耳机四代真无线降噪新款pro3代光感入耳改名试用三代安卓通用</td><td class="num">¥34.95</td><td class="num">¥1.00</td><td class="num final">¥33.95</td><td class="num">1212</td></tr><tr><td class="num">13</td><td>pdd</td><td class="title">跨境S90无线蓝牙耳机超长续航高音质入耳式大电量电竞tws耳机批发</td><td class="num">¥38.68</td><td class="num">¥4.00</td><td class="num final">¥34.68</td><td class="num">—</td></tr><tr><td class="num">14</td><td>pdd</td><td class="title">迷你双耳蓝牙耳机入耳超小听歌运动适用vivo小米苹果OPPO华为通用</td><td class="num">¥39.00</td><td class="num">¥1.00</td><td class="num final">¥38.00</td><td class="num">13.0 万</td></tr><tr><td class="num">15</td><td>pdd</td><td class="title">智能APP蓝牙耳机定位入耳降噪游戏音乐低延迟超长续航</td><td class="num">¥38.25</td><td class="num">¥0.00</td><td class="num final">¥38.25</td><td class="num">—</td></tr><tr><td class="num">16</td><td>pdd</td><td class="title">华强北蓝牙耳机四代适用于苹果安卓重低音无线半入耳降噪新款运动</td><td class="num">¥67.90</td><td class="num">¥5.00</td><td class="num final">¥62.90</td><td class="num">62.0 万</td></tr><tr><td class="num">17</td><td>pdd</td><td class="title">华强北四代蓝牙耳机适用苹果安卓重低音无线半入耳降噪新款运动</td><td class="num">¥68.00</td><td class="num">¥3.00</td><td class="num final">¥65.00</td><td class="num">9561</td></tr><tr><td class="num">18</td><td>pdd</td><td class="title">2026新品华强北7代air7蓝牙耳机半入耳式运动降噪适用安卓苹果</td><td class="num">¥78.96</td><td class="num">¥6.00</td><td class="num final">¥72.96</td><td class="num">29.0 万</td></tr><tr><td class="num">19</td><td>pdd</td><td class="title">【倍思】W04 焕新版蓝牙耳机无线降噪高端新款臻品音质60h长续航通用</td><td class="num">¥99.00</td><td class="num">¥1.00</td><td class="num final">¥98.00</td><td class="num">16.0 万</td></tr></tbody>
+    </table>
+  </div>
+  <div class="stats"><div class="line">🏆 全局最低券后价 <b>¥10.80</b>　券前 ¥11.80 − 券 ¥1.00　（5.2无线蓝牙耳机Pro5五5代迷你华为双耳入耳小米OPPO苹果安卓）</div><div class="cov">price <span>██████████</span> 19/19</div><div class="cov">coupon_amount <span>█████████·</span> 18/19</div><div class="cov">final_price <span>██████████</span> 19/19</div><div class="cov">sales <span>████████··</span> 16/19</div><div class="cov">rating <span>··········</span> 0/19</div><div class="line" style="color:#94a3b8;margin-top:8px">rating 恒为 0 属数据源限制：联盟开放接口不返回评价数据，不是抓取失败。</div></div>
+</div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>智能比价助手</b> —— 由个人开发者独立开发的商品比价工具，与拼多多、淘宝等平台无隶属关系。</p>
+    <p>数据来源：拼多多 · 多多进宝联盟开放接口（官方合规接口）。商品链接为带推广位的推广链接，不影响用户实际支付价格。</p>
+    <p><a href="index.html">比价首页</a> · <a href="privacy.html">隐私政策与数据来源声明</a></p>
+    <p style="color:#94a3b8">页面生成时间：2026-10-14 15:14 ·
+      共 2 份快照 · 本页为纯静态页面，不使用脚本、不请求任何接口</p>
+  </div>
+</footer>
+</body>
+</html>
